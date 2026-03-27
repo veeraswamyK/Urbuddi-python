@@ -24,6 +24,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure -y
+          sudo apt-get update
+          sudo apt-get install allure -y
+
+      - name: Create Allure results folder
+        run: mkdir -p allure-results
+
       - name: Run tests
         run: pytest --alluredir=allure-results
 
