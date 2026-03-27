@@ -31,3 +31,6 @@ class DashboardPage(BasePage):
     SECTIONS = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
     SECTIONS_A = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
     SECTIONS_AB = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
+    def is_dashboard_loaded(self) -> bool:
+        """Verify dashboard page is loaded after login."""
+        return self.is_element_displayed(self.DASHBOARD_HEADING)
