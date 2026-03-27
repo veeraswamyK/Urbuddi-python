@@ -1,0 +1,12 @@
+
+environment: dev
+dev:
+  base_url: https://dev.urbuddi.com
+  api_base_url: https://dev.api.urbuddi.com
+  username: nafreenbegum123@optimworks.com
+  password: Nafreen@123
+  browsers: chrome
+  headless: false
+  implicit_wait: 10
+  explicit_wait: 20
+
