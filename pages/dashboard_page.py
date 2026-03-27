@@ -28,3 +28,4 @@ class DashboardPage(BasePage):
 
     BIRTHDAYS_SECTION = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
     BIRTHDAYS_SECTIONS = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
+    SECTIONS = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
