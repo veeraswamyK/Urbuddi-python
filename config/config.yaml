@@ -1,5 +1,5 @@
-
 environment: dev
+
 dev:
   base_url: https://dev.urbuddi.com
   api_base_url: https://dev.api.urbuddi.com
@@ -9,4 +9,3 @@ dev:
   headless: false
   implicit_wait: 10
   explicit_wait: 20
-

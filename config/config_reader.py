@@ -8,14 +8,18 @@ class ConfigReader:
 
     def __init__(self):
         if ConfigReader._config is None:
-            config_path=os.path.join(os.path.dirname(__file__),"config.yaml")
+            config_path = os.path.join(os.path.dirname(__file__), "config.yaml")
 
             with open(config_path, "r") as full:
                 all_config = yaml.safe_load(full)
 
-            ConfigReader._env = all_config.get("environment", "dev")
-
+            # Environment selection
+            ConfigReader._env = os.getenv("ENV", all_config.get("environment", "dev"))
             ConfigReader._config = all_config.get(ConfigReader._env, {})
+
+            headless_env = os.getenv("HEADLESS")
+            if headless_env is not None:
+                ConfigReader._config["headless"] = headless_env.lower() == "true"
 
         self.config = ConfigReader._config
         self.env = ConfigReader._env
@@ -41,12 +45,8 @@ class ConfigReader:
     def is_headless(self):
         return self.config.get("headless", False)
 
-
     def get_implicit_wait(self):
         return self.config.get("implicit_wait", 10)
 
     def get_explicit_wait(self):
         return self.config.get("explicit_wait", 20)
-
-
-
