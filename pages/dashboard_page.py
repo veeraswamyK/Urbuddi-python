@@ -27,3 +27,4 @@ class DashboardPage(BasePage):
     Billing_clients=(By.XPATH, "//p[text()='Projects']")
 
     BIRTHDAYS_SECTION = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
+    BIRTHDAYS_SECTIONS = (By.XPATH, "//h5[contains(text(),\"Birthday\")]/..")
